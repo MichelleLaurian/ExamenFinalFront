@@ -1,3 +1,5 @@
+/* aca puse los colores o estilos globales */
+
 * {
  margin: 0;
  padding: 0;
@@ -12,19 +14,24 @@ body {
  display: flex;
  justify-content: space-between;
  align-items: center;
- margin: 3rem 2rem;
+ padding:0 2rem; 
 }
 .button_started {
  background-color: #f3603b;
  color: #ffffff;
- border-radius: 30px;
+ border-radius: 20px;
  border: none;
  padding: 0.8rem;
+ cursor: pointer;
 }
+.button_started:hover {
+ background-color: #ff8263;
+}
+
 .text-manage,
 h2,
 .article1,
-h4,
+h3,
 .text_sect,
 h1 {
  color: #232851;
@@ -36,23 +43,22 @@ h1 {
  color: #494949;
  /* font-size: small; */
 }
-.footer {
- background-color: #1e1e26;
- color: #ffffff;
+/* ----------CARDS --------------- */
+.cards_container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 2rem;
+   }
+.card_text {
+ background-color: #e4e4e487;
+ padding: 2rem 0.5rem;
+}
+.card_arcticle {
+ position: relative;
+ padding-top: 3.5rem;
 }
 
-/* .nav__menu li:first-child {
-	margin-right: auto;
-	display: block;
-} */
-.button_go {
- background-color: #f3603b;
- color: #ffffff;
- border-radius: 30px;
- border: none;
- padding: 0.8rem;
- width: 4.5rem;
-}
 .number_manage {
  background-color: #f3603b;
  color: #ffffff;
@@ -62,18 +68,81 @@ h1 {
  width: 10%;
 }
 
+/* ----------------------------prefooter ----------------------------------- */
+.preFooter {
+ background-color: #f3613c;
+ color: #ffffff;
+ display: flex;
+ /* flex-direction: column; */
+ box-sizing: content-box;
+ justify-content: space-around;
+ align-items: center;
+ height: 8rem;
+}
+#button_prefooter {
+ background-color: #ffffff;
+ color: #f3603b;
+ cursor: pointer;
+}
+#button_prefooter:hover{
+    background-color: #dcc6c1;
+}
+#preFooter_text{
+color: #ffffff;
+}
+
+/* ----------------------styles Footer global------------ */
+.footer {
+ background-color: #1e1e26;
+ color: #ffffff;
+}
 .footer_input {
  border-radius: 30px;
  padding: 0.8rem;
- width: 80%;
+ width: auto;
  border: none;
  margin: auto;
+}
+#suscribe:invalid{
+    border: 2px solid red;
+}
+.footer-menu {
+ /* padding: 2rem 0; */
+ display: flex;
+ justify-content: space-around;
+}
+.footer-menu ul li {
+ cursor: pointer;
+}
+.footer-menu ul li:hover {
+ color: #f3613c;
 }
 
 .footer_sMedia {
  display: flex;
- /* flex-direction: column; */
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
 }
+
+.footer_sMedia_icons a {
+ text-align: center;
+ margin: 1rem;
+}
+
+.footer_sMedia_icons a img:hover {
+ background-color: #f76845;
+ cursor: pointer;
+}
+
+.footer_logo {
+ display: flex;
+ justify-content: center;
+ margin: 2rem;
+}
+
+/* lo genere en 425 por que se veia mal. funcion para 375 tambien :D
+*/
 @media (max-width: 425px) {
  body {
   display: block;
@@ -82,13 +151,10 @@ h1 {
   box-sizing: content-box;
  }
 
- /* .intro_i {
-  width: auto;
-  height: auto;
- } */
- /* header and menu navbar */
+ /* ------------------header and menu navbar 425px----------------------- */
  .head_menu {
   flex-direction: row;
+  margin: 2rem 1rem;
  }
 
  .nav_toggle {
@@ -130,19 +196,19 @@ h1 {
 
   font-size: 1rem;
  }
- #nav_checkbox:checked ~ ul.nav_menu li {
+ /* #nav_checkbox:checked ~ ul.nav_menu li {
   display: block;
  }
 
  #nav_checkbox:checked ~ label.nav_toggle .close {
   display: block;
- }
+ } */
 
  #nav_checkbox:checked ~ label.nav_toggle .menu {
   display: none;
  }
 
- /* section presentation  */
+ /* -----------------------section presentation 425px---------------------- */
  .sect_pres {
   display: flex;
   flex-direction: column-reverse;
@@ -159,7 +225,7 @@ h1 {
   text-align: center;
  }
 
- /* section manage */
+ /* -----------------------------section manage 425px---------------------------- */
  .sect_manage {
   display: flex;
   flex-direction: column;
@@ -196,12 +262,7 @@ h1 {
  .article1 p {
   color: #494949;
  }
- /*----------------- cards section --------------------------- */
- .cards_container {
-  box-sizing: content-box;
-  margin: 2rem;
-  text-align: center;
- }
+ /*----------------- ------------cards section 425px --------------------------- */
 
  .card_title {
   margin: 2rem;
@@ -212,40 +273,31 @@ h1 {
   flex-direction: row;
  }
 
- .card_arcticle {
-  position: relative;
-  padding-top: 3rem;
-  margin-bottom: 2rem;
- }
  .cards_img {
   width: 20%;
   position: absolute;
-  top: 0;
-  right: 50;
-  left: 50;
+  top: 10px;
+  right: 50px;
+  left: 120px;
  }
- .card_text {
-  background-color: #e1dfdf87;
-  padding: 2rem 0.5rem;
+ .no_show {
+  display: none;
  }
-
+ .container_button_card {
+    margin-top: 1rem;
+   }
+/* ---------------------------PREFOOTER ----425px--------------------------------------- */
  .preFooter {
-  background-color: #f3613c;
-  color: #ffffff;
   display: flex;
   flex-direction: column;
-  box-sizing: content-box;
-  align-items: center;
-  justify-content: center;
-  height: 8rem;
  }
- .preFooter .button_started {
-  background-color: #ffffff;
-  color: #f3603b;
- }
- .preFooter_text {
-  margin: 1rem;
- }
+
+ #button_go {
+     width:40px;
+} 
+/* #suscribe:invalid{
+    display: none;
+} */
  .footer {
   display: flex;
   flex-direction: column;
@@ -257,28 +309,9 @@ h1 {
   flex-direction: row;
  }
  .footer-menu {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
- }
- #rtl_func > ul {
-  display: inline-block;
-  margin: 2rem;
- }
- .footer_sMedia {
-  display: flex;
-  flex-direction: column;
+  padding: 2rem 0;
  }
 
- .footer_sMedia_icons object {
-  text-align: center;
-  margin: 1rem;
- }
- .footer_logo {
-  display: flex;
-  justify-content: center;
-  margin: 1rem;
- }
  .footer_text_copy {
   color: #666666;
   text-align: center;
@@ -286,14 +319,13 @@ h1 {
   margin-top: 3rem;
  }
 }
-
-@media all and (min-width: 426px) {
+/* ////////////////////////////------Lo estilice para 1024px---/////////////////////////////// */
+@media (min-width: 426px) {
  body {
   width: auto;
-  /* display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center; */
+ }
+ .head_menu {
+  margin: 3rem;
  }
 
  .nav_toggle {
@@ -307,43 +339,37 @@ h1 {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-right: auto;
  }
  .nav_menu li {
+display: flex;
   cursor: pointer;
  }
  .nav_menu li a {
   text-decoration: none;
-  margin: 0 1rem;
+  margin-right: 0.5rem;
   font-weight: 700;
  }
- .button_started {
-  margin-left: 3rem;
+ /* ----------------------------------section presentation -1024px------------------------ */
+ .sect_pres{
+     display: flex;
  }
- .sect_pres {
-  display: flex;
-  align-items: center;
-  justify-content: center;
- }
- .sect_pres .intro_i {
+.text_sect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    text-align: center;
+}
+.text1, .text2{
+    margin-bottom: 1rem;
+} 
+.sect_pres .intro_i {
   width: 50%;
  }
 
- .text_sect h1 {
-  font-weight: bolder;
- }
- .text_sect .text1,
- .text2,
- .button_started {
-  margin-left: 4rem;
- }
- .text_sect .text1 {
-  padding: 2rem 0;
- }
- .text_sect .text2 {
-  padding-bottom: 1rem;
- }
-
- /* manage conainer */
+ /*------------------------ manage conainer 1024------------------------------- */
  .sect_manage {
   display: flex;
   margin: 3rem;
@@ -374,4 +400,62 @@ h1 {
   padding-left: 6rem;
   padding-bottom: 0.8rem;
  }
+
+ /* --------------------------- Cards section-1024--------------------- */
+
+ .cards_total {
+  display: flex;
+  flex-direction: row;
+  /* margin: 3rem; */
+ }
+ .cards_img {
+  width: auto;
+  height: 65px;
+  position: absolute;
+ }
+ .card_arcticle {
+  margin: 0.5rem;
+ }
+ .cards_img {
+  position: absolute;
+  top: 10px;
+  right: 50%;
+  left: 50%;
+ }
+/* ------------------------------------footer 1024-------------------------------- */
+ .footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  padding: 2rem 0;
+ }
+ /* #suscribe:invalid:required{
+    border: none
+} */
+.button_error p{
+color: red;
+text-align: center;
+}
+ #footer__menu {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+ }
+ .footer_form{
+     display: flex;
+     flex-direction:row;
+ }
+
+ .footer form {
+  width: 30%;
+ }
+ #container__copy{
+     display: flex;
+     align-items: flex-start;
+justify-content:flex-start ;
+ }
+#footer_text_copy{
+    display: flex;
+    justify-content:flex-start ;
+}
 }
